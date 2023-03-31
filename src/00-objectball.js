@@ -115,3 +115,24 @@ gameObject = () => {
   }
 }
 
+numPointsScored = (playerName) => {
+  if (playerList()[playerName]) {
+    return `${playerName} scored ${playerList()[playerName]["points"]} points.`
+  } else {
+    return `${playerName} is not a valid player name.`
+  }
+}
+
+shoeSize = (playerName) => {
+  if (playerList()[playerName]) {
+    return `${playerName} has a shoe size of ${playerList()[playerName]["shoe"]}.`
+  } else {
+    return `${playerName} is not a valid player name.`
+  }
+}
+
+//Helper
+function playerList() {
+  const playerList = {...gameObject().home.players, ...gameObject().away.players}
+  return playerList
+}
