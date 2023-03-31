@@ -1,138 +1,117 @@
 gameObject = () => { 
   return {
-    "home": {
-      "teamName":"Brooklyn Nets",
-      "colors":["Black", "White"],
-      "players": {
+    home: {
+      teamName:"Brooklyn Nets",
+      colors:["Black", "White"],
+      players: {
         "Alan Anderson":{
-          "Number": 0,
-          "Shoe": 16,
-          "Points": 22,
-          "Rebounds": 12,
-          "Assists": 12,
-          "Steals": 3,
-          "Blocks": 1,
-          "Slam Dunks": 1,
+          number: 0,
+          shoe: 16,
+          points: 22,
+          rebounds: 12,
+          assists: 12,
+          steals: 3,
+          blocks: 1,
+          slamDunks: 1,
         },
         "Reggie Evans":{
-          "Number": 30,
-          "Shoe": 14,
-          "Points": 12,
-          "Rebounds": 12,
-          "Assists": 12,
-          "Steals": 12,
-          "Blocks": 12,
-          "Slam Dunks": 7,
+          number: 30,
+          shoe: 14,
+          points: 12,
+          rebounds: 12,
+          assists: 12,
+          steals: 12,
+          blocks: 12,
+          slamDunks: 7,
         },
         "Brook Lopez":{
-          "Number": 11,
-          "Shoe": 17,
-          "Points": 17,
-          "Rebounds": 19,
-          "Assists": 10,
-          "Steals": 3,
-          "Blocks": 1,
-          "Slam Dunks": 15,
+          number: 11,
+          shoe: 17,
+          points: 17,
+          rebounds: 19,
+          assists: 10,
+          steals: 3,
+          blocks: 1,
+          slamDunks: 15,
         },
         "Mason Plumlee":{
-          "Number": 1,
-          "Shoe": 19,
-          "Points": 26,
-          "Rebounds": 12,
-          "Assists": 6,
-          "Steals": 3,
-          "Blocks": 8,
-          "Slam Dunks": 5,
+          number: 1,
+          shoe: 19,
+          points: 26,
+          rebounds: 12,
+          assists: 6,
+          steals: 3,
+          blocks: 8,
+          slamDunks: 5,
         },
         "Jason Terry":{
-          "Number": 31,
-          "Shoe": 15,
-          "Points": 19,
-          "Rebounds": 2,
-          "Assists": 2,
-          "Steals": 4,
-          "Blocks": 11,
-          "Slam Dunks": 1,
+          number: 31,
+          shoe: 15,
+          points: 19,
+          rebounds: 2,
+          assists: 2,
+          steals: 4,
+          blocks: 11,
+          slamDunks: 1,
         },
       },
     },
-    "away": {
-      "teamName":"Charlotte Hornets",
-      "colors":["Turquoise", "Purple"],
-      "players": {
+    away: {
+      teamName:"Charlotte Hornets",
+      colors:["Turquoise", "Purple"],
+      players: {
         "Jeff Adrien":{
-          "Number": 4,
-          "Shoe": 18,
-          "Points": 10,
-          "Rebounds": 1,
-          "Assists": 1,
-          "Steals": 2,
-          "Blocks": 7,
-          "Slam Dunks": 2,
+          number: 4,
+          shoe: 18,
+          points: 10,
+          rebounds: 1,
+          assists: 1,
+          steals: 2,
+          blocks: 7,
+          slamDunks: 2,
         },
         "Bismak Biyombo":{
-          "Number": 0,
-          "Shoe": 16,
-          "Points": 12,
-          "Rebounds": 4,
-          "Assists": 7,
-          "Steals": 7,
-          "Blocks": 15,
-          "Slam Dunks": 10,
+          number: 0,
+          shoe: 16,
+          points: 12,
+          rebounds: 4,
+          assists: 7,
+          steals: 7,
+          blocks: 15,
+          slamDunks: 10,
         },
         "DeSagna Diop":{
-          "Number": 2,
-          "Shoe": 14,
-          "Points": 24,
-          "Rebounds": 12,
-          "Assists": 12,
-          "Steals": 4,
-          "Blocks": 5,
-          "Slam Dunks": 5,
+          number: 2,
+          shoe: 14,
+          points: 24,
+          rebounds: 12,
+          assists: 12,
+          steals: 4,
+          blocks: 5,
+          slamDunks: 5,
         },
         "Ben Gordon":{
-          "Number": 8,
-          "Shoe": 15,
-          "Points": 33,
-          "Rebounds": 3,
-          "Assists": 2,
-          "Steals": 1,
-          "Blocks": 1,
-          "Slam Dunks": 0,
+          number: 8,
+          shoe: 15,
+          points: 33,
+          rebounds: 3,
+          assists: 2,
+          steals: 1,
+          blocks: 1,
+          slamDunks: 0,
         },
         "Brendan Haywood":{
-          "Number": 32,
-          "Shoe": 15,
-          "Points": 6,
-          "Rebounds": 12,
-          "Assists": 12,
-          "Steals": 22,
-          "Blocks": 5,
-          "Slam Dunks": 12,
+          number: 32,
+          shoe: 15,
+          points: 6,
+          rebounds: 12,
+          assists: 12,
+          steals: 22,
+          blocks: 5,
+          slamDunks: 12,
         },
       },
     },
   }
 }
 
-const numPointsScored = (playerName) => {
-  if (gameObject()["home"]["players"][playerName]) {
-    return `${playerName} has ${gameObject()["home"]["players"][playerName]["Points"]} points`;
-  }
-  else if (gameObject()["away"]["players"][playerName]) {
-    return `${playerName} has ${gameObject()["away"]["players"][playerName]["Points"]} points`;
-  } else {
-    return "Player not found";
-  }
-}
-
-const shoeSize = (playerName) => {
-  if (gameObject()["home"]["players"][playerName]) {
-    return `${playerName} has size ${gameObject()["home"]["players"][playerName]["Shoe"]} feet`;
-  }
-  else if (gameObject()["away"]["players"][playerName]) {
-    return `${playerName} has size ${gameObject()["away"]["players"][playerName]["Shoe"]} feet`;
-  } else {
-    return "Player not found";
-  }
-}
