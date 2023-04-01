@@ -131,8 +131,46 @@ shoeSize = (playerName) => {
   }
 }
 
+teamColors = (teamName) => {
+  const teamList = []
+  for (const team in gameObject()) {
+    if (teamName === gameObject().home.teamName) {
+      teamList = gameObject().home.colors
+      break
+    } else if (teamName === gameObject().away.teamName) {
+      teamList = gameObject().away.colors
+      break
+    } else {teamList = `${teamName} is not a valid team`
+    }};
+  return teamList
+}
+
+playerNumbers = (teamName) => {
+  let jerseyNumber = []
+  const homePlayers = gameObject().home.players
+  const awayPlayers = gameObject().away.players
+
+  if (teamName === gameObject().home.teamName) {
+    for (const key in homePlayers) {
+      jerseyNumber.push(homePlayers[key].number)
+    }} 
+  else if (teamName === gameObject().away.teamName) {
+    for (const key in awayPlayers) {
+      jerseyNumber.push(awayPlayers[key].number)
+    }} 
+  else {jerseyNumber = `${teamName} is not a valid team`}
+  return jerseyNumber
+}
+
 //Helper
+
+
+function teamNames() {
+  const teams = [gameObject().home.teamName, gameObject().away.teamName]
+  return teams
+}
+
 function playerList() {
-  const playerList = {...gameObject().home.players, ...gameObject().away.players}
-  return playerList
+  const players = {...gameObject().home.players, ...gameObject().away.players}
+  return players
 }
