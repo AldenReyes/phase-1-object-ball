@@ -162,8 +162,31 @@ playerNumbers = (teamName) => {
   return jerseyNumber
 }
 
-//Helper
+playerStats = (playerName) => {
+  if (playerList()[playerName]) {
+    return playerList()[playerName]
+  } else {
+    return `${playerName} is not a valid player`
+  }
+}
 
+bigShoeRebounds = () => {
+let playerWithLargestShoe = ""
+let highestShoe = 0
+let reboundNum = 0
+for (const player in playerList()) {
+  if (playerList()[player].shoe > highestShoe) {
+    highestShoe = playerList()[player].shoe
+    playerWithLargestShoe = player
+  }
+}
+if (playerList()[playerWithLargestShoe]) {
+  reboundNum = playerList()[playerWithLargestShoe].rebounds
+}
+return reboundNum
+}
+
+//Helpers
 
 function teamNames() {
   const teams = [gameObject().home.teamName, gameObject().away.teamName]
